@@ -42,6 +42,8 @@ def clone_repositories(username, password, repos):
                 os.system("git clone " + repository.url + " ./Code/" + language + "/" + repository.name)
             except: 
                 failed_repos.append(repository.url)
+    for ex in failed_repos:
+        print("failed to clone: " + ex)
 
 if __name__ == '__main__':
     username = input("Username: ")
